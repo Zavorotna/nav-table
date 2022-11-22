@@ -34,6 +34,10 @@ a {
     padding-bottom: 40px;
 }
 
+.netbook {
+    display: table;
+}
+
 .top-bar {
     background-color: #2a3644;
     border-radius: 3px;
@@ -228,18 +232,20 @@ tbody > tr:hover > td {
     border-left-color: #c0c1c2;
 }
 
-.content {
+.content-table {
     width: 100%;
     display: table;
     border-radius: 3px;
     overflow: hidden;
 }
 
-.table-css {
-    display: table-cell;
+.table-css,
+.head-table {
+    display: table-row;
 }
 
-.table-css p {
+.head {
+    display: table-cell;
     margin: 0;
     padding: 17px 30px;
     background-color: #2a3644;
@@ -249,28 +255,27 @@ tbody > tr:hover > td {
     border-right: 1px solid #3f4852;
 }
 
-.menu-style {
-    margin: 0;
-    padding: 0;
-}
-
-.menu-style li {
+.cell {
+    display: table-cell;
     color: #2a3644;
     list-style: none;
-    padding: 17px 30px;
+    padding: 17px 28px;
     background-color: #f2f2f2;
 }
 
-.menu-style li {
-    border-right: 1px solid #c0c1c2;
-    border-top: 1px solid #c0c1c2;
+.table-css div {
+    border-top: 1px solid #cdcddd;
 }
 
-.menu-style li:nth-child(odd) {
+.table-css div:not(:last-child) {
+    border-right: 1px solid #c0c1c2;
+}
+
+.bgc {
     background-color: #e8e8e8;
 }
 
-.menu-style li:hover {
+.table-css:hover > div {
     background-color: #c0c1c2;
     border-top-color: #c0c1c2;
     border-left-color: #c0c1c2;
