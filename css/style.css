@@ -39,16 +39,6 @@ a {
     background-color: #2a3644;
 }
 
-.hidden-menu ul>li:first-child {
-    border-top-right-radius: 3px;
-    border-top-left-radius: 3px;
-}
-
-.hidden-menu ul>li:last-child {
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
-}
-
 .menu,
 .menu-bottom,
 .sub-menu {
@@ -92,14 +82,33 @@ a {
     transition: all 1s ease;
 }
 
+.hidden-menu ul>li + li {
+    border-top: 1px solid #b9bdc1;
+}
+
+.hidden-menu ul>li:first-child {
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+.hidden-menu ul>li:last-child {
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
 .sub-menu {
-    display: none;
     width: 210px;
+    padding-top: 35px;
+    display: none;
     position: absolute;
-    top: 40px;
-    left: 0;
+    top: 15px;
+    left: -1px;
     border-radius: 3px;
     z-index: 1;
+}
+
+.milk {
+    left: -68%; 
 }
 
 .sub-menu li {
