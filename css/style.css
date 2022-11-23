@@ -34,9 +34,15 @@ a {
     margin-bottom: 40px;
 }
 
-.top-bar,
-.hidden-menu {
+.top-bar {
     background-color: #2a3644;
+}
+
+.top-bar,
+.top-bar ul.menu >li,
+.top-bar ul.menu >li:hover {
+    border-radius: 3px;
+    border-collapse: collapse;
 }
 
 .menu,
