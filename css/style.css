@@ -4,7 +4,6 @@ body {
 }
 
 h1 {
-    margin: 25px 0;
     font-size: 24px;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -17,7 +16,7 @@ a {
 }
 
 .wrapper {
-    margin: 25px auto;
+    margin: 75px auto;
     box-sizing: border-box;
     max-width: 960px;
 }
@@ -39,27 +38,27 @@ a {
 }
 
 .top-bar,
-.top-bar ul.menu >li,
-.top-bar ul.menu >li:hover {
+.top-bar > ul.menu >li,
+.top-bar > ul.menu >li:hover {
     border-radius: 3px;
     border-collapse: collapse;
 }
 
 .menu,
 .menu-bottom,
-.sub-menu {
+.sub-menu,
+.sub-menu-second,
+.sub-menu-second-one,
+.sub-menu-second-two {
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-.menu li,
-.menu-bottom li {
+.menu .hidden-menu > a,
+.menu-bottom > a {
+    display: block;
     padding: 14px 32px;
-}
-
-.menu a,
-.menu-bottom a {
     font-size: 16px;
     font-weight: bold;
     color: #fff;
@@ -70,7 +69,6 @@ a {
 }
 
 .menu li:hover > a {
-    font-weight: bold;
     color: #fd8612;
 }
 
@@ -83,53 +81,91 @@ a {
     position: relative;
 }
 
-.tasty li:hover .sub-menu {
-    display: block;
+.tasty li:hover .sub-menu,
+.sprite-menu li:hover .sub-menu-second,
+.sprite-menu li:hover .sub-menu-second-one,
+.sprite-menu li:hover .sub-menu-second-two {
+    max-width: 1000px;
     transition: all 1s ease;
+    visibility: visible;
 }
 
-.hidden-menu ul>li + li {
+.hidden-menu ul > li + li,
+.hidden-menu-second ul > li + li {
     border-top: 1px solid #b9bdc1;
 }
 
-.hidden-menu ul>li:first-child {
+.hidden-menu ul>li:first-child,
+.hidden-menu-second ul>li:first-child {
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
 }
 
-.hidden-menu ul>li:last-child {
+.hidden-menu ul>li:last-child,
+.hidden-menu-second ul>li:last-child {
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
 }
 
-.sub-menu {
+.sub-menu,
+.sub-menu-second,
+.sub-menu-second-one {
     width: 210px;
-    padding-top: 35px;
-    display: none;
+    height: 0;
+    padding-top: 15px;
     position: absolute;
-    top: 15px;
+    top: 35px;
     left: -1px;
     border-radius: 3px;
     z-index: 1;
+    visibility: hidden;
 }
 
 .milk {
     left: -68%; 
 }
 
-.sub-menu li {
-    padding: 17px 25px;
+.sub-menu li,
+.sub-menu-second li,
+.sub-menu-second-one li,
+.sub-menu-second-two li {
     background-color: #d2d4d5;
 }
 
-.sub-menu li:hover {
+.sub-menu li:hover,
+.sub-menu-second li:hover,
+.sub-menu-second-one li:hover,
+.sub-menu-second-two li:hover {
     background-color: #2a3644;
 }
 
-.sub-menu a {
+.sub-menu a,
+.sub-menu-second a,
+.sub-menu-second-one a
+.sub-menu-second-two a {
+    display: block;
+    padding: 15px 20px;
     font-size: 15px;
+    line-height: 1em;
     font-weight: bold;
     color: #2a3644;
+}
+
+.sub-menu-second-one {
+    width: 252%;
+    border: none;
+}
+
+.sub-menu-second-two {
+    width: 210px;
+    height: 0;
+    padding-top: 15px;
+    position: absolute;
+    top: 35px;
+    left: 125%;
+    border-radius: 3px;
+    z-index: 1;
+    visibility: hidden;
 }
 
 .netbook {
@@ -137,37 +173,50 @@ a {
 }
 
 ul.market li {
-    padding: 14px 43px;
     border-left: 1px solid #3f4852;
+}
+
+.market li:hover .first-menu-frig {
+    display: block;
+}
+
+ul.market li > a {
+    display: block;
+    padding: 14px 43.2px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
 }
 
 .top-menu {
     display: flex;
 }
 
-.top-menu li:first-child {
-    padding-left: 60px;
+.top-menu > li:first-child {
+    padding-left: 20px;
 }
 
-.top-menu li {
+.top-menu > li {
     border-right: 1px solid #3f4852;
 }
 
-.top-menu li {
+.top-menu > li {
     position: relative;
+}
+
+.sprite-menu > li > a {
+    display: block;
+    padding: 14px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
 }
 
 .top-menu a.home-page::before {
     content: "";
     position: absolute;
-    left: 32px;
+    left: 22px;
     background: url(../img/sprite.png) no-repeat;
-    width: 16px;
-    height: 13px;
-    background-position: 0 0;
-}
-
-.top-menu li:hover>a.home-page  {
     width: 16px;
     height: 13px;
     background-position: 0 0;
@@ -341,7 +390,6 @@ tbody > tr:hover > td {
     font-weight: bold;
     border-right: 1px solid #3f4852;
 }
-
 
 .cell {
     padding-left: 17px;
