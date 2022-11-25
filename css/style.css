@@ -243,9 +243,9 @@ thead tr > th {
 }
 
 .span th:first-child {
-    width: 43px;
+    width: 38px;
     padding: 0;
-    padding-left: 17px;
+    padding-left: 22px;
 }
 
 .span th:nth-child(2) {
@@ -318,22 +318,38 @@ tbody > tr:hover > td {
     display: table-row;
 }
 
+.head-table .head:first-child,
+.table-css .cell:first-child {
+    padding-left: 22px;
+    width: 38px;
+}
+
+.head-table .head:nth-child(3), .head:nth-child(4), .head:nth-child(5),
+.table-css .cell:nth-child(3), .cell:nth-child(4), .cell:nth-child(5) {
+    padding: 0;
+    padding-right: 17px;
+    text-align: end;
+}
+
 .head {
+    padding-left: 17px;
     display: table-cell;
-    margin: 0;
-    padding: 17px 30px;
     background-color: #2a3644;
     font-size: 16px;
+    line-height: 2.9em;
     color: #fff;
     font-weight: bold;
     border-right: 1px solid #3f4852;
 }
 
+
 .cell {
+    padding-left: 17px;
     display: table-cell;
     color: #2a3644;
+    font-size: 16px;
+    line-height: 2.5em;
     list-style: none;
-    padding: 17px 28px;
     background-color: #f2f2f2;
 }
 
