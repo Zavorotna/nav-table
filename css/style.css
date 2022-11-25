@@ -298,6 +298,7 @@ thead tr > th {
 }
 
 .span th:nth-child(2) {
+    width: 52.5%;
     padding-left: 17px;
 }
 
@@ -373,6 +374,9 @@ tbody > tr:hover > td {
     width: 38px;
 }
 
+.head-table .head:nth-child(2) {
+    width: 52.5%;
+}
 .head-table .head:nth-child(3), .head:nth-child(4), .head:nth-child(5),
 .table-css .cell:nth-child(3), .cell:nth-child(4), .cell:nth-child(5) {
     padding: 0;
@@ -396,7 +400,7 @@ tbody > tr:hover > td {
     display: table-cell;
     color: #2a3644;
     font-size: 16px;
-    line-height: 2.5em;
+    line-height: 2.83em;
     list-style: none;
     background-color: #f2f2f2;
 }
