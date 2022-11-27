@@ -79,6 +79,7 @@ a {
 
 .tasty li:hover .sub-menu,
 .sprite-menu li:hover .sub-menu,
+.sprite-menu li:hover .double-menu,
 .market li:hover .sub-first,
 .sub-first li:hover .sub-second,
 .sub-second li:hover .sub-last  {
@@ -131,27 +132,6 @@ a {
     color: #2a3644;
 }
 
-.hidden-menu-second .duble-sub-menu {
-    width: 252%;
-    background-color: #d2d4d5;
-}
-
-.sub-menu-second-one {
-    border-right: #b9bdc1;
-}
-
-.sub-menu-second-two {
-    width: 210px;
-    height: 0;
-    padding-top: 16px;
-    position: absolute;
-    top: 35px;
-    left: 124%;
-    border-radius: 3px;
-    z-index: 1;
-    visibility: hidden;
-}
-
 .netbook {
     display: table;
 }
@@ -198,6 +178,65 @@ a {
 
 .top-menu > li {
     position: relative;
+}
+
+.sub-menu-second-one {
+    border-right: #b9bdc1;
+}
+
+.double-menu ul > li:first-child {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.double-menu ul > li:last-child {
+    border-radius: 0 0 3px 3px;
+}
+
+.double-menu {
+    background-color: #d2d4d5;
+    width: 420px;
+    height: 183px;
+    margin-top: 5px;
+}
+
+.double-menu {
+    position: absolute;
+    border-radius: 3px;
+    z-index: 1;
+    visibility: hidden;
+}
+
+.sub-menu-second-one li {
+    border-right: 1px solid #b9bdc1;
+}
+
+.sub-menu-second-one li + li{
+    border-top: 1px solid #b9bdc1;
+}
+
+.sub-menu-second-one {
+    width: 210px;
+    height: 0;
+    position: absolute;
+    top: -5px;
+    left: 0;
+    z-index: 1;
+    visibility: hidden;
+}
+
+.sub-menu-second-two {
+    width: 210px;
+    height: 0;
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    z-index: 1;
+    visibility: hidden;
+}
+
+.sub-menu-second-two li {
+    border-bottom: 1px solid #b9bdc1;
 }
 
 .sprite-menu > li > a {
