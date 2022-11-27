@@ -87,22 +87,16 @@ a {
     visibility: visible;
 }
 
-.hidden-menu ul > li + li,
-.hidden-menu-second ul > li + li,
-.sub-big-menu ul > li + li {
+.border-menu ul > li + li {
     border-top: 1px solid #b9bdc1;
 }
 
-.hidden-menu ul>li:first-child,
-.hidden-menu-second ul>li:first-child,
-.sub-big-menu ul > li:first-child {
+.border-menu ul > li:first-child {
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
 }
 
-.hidden-menu ul>li:last-child,
-.hidden-menu-second ul>li:last-child,
-.sub-big-menu ul > li:last-child {
+.border-menu ul > li:last-child {
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
 }
