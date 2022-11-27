@@ -11,6 +11,13 @@ h1 {
     font-weight: bold;
 }
 
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    cursor: pointer;
+}
+
 a {
     text-decoration: none;
 }
@@ -27,7 +34,7 @@ a {
     justify-content: space-between;
 }  
 
-.food,
+.navigation-food,
 .netbook,
 .main {
     margin-bottom: 40px;
@@ -44,18 +51,7 @@ a {
     border-collapse: collapse;
 }
 
-.menu,
-.menu-bottom,
-.sub-menu,
-.sub-menu-second,
-.sub-menu-second-one,
-.sub-menu-second-two {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.menu .hidden-menu > a,
+.menu a,
 .menu-bottom > a {
     display: block;
     padding: 14px 32px;
@@ -77,47 +73,48 @@ a {
     border-right: 1px solid #3f4852;
 }
 
-.food li {
+.navigation-food li,
+.market li {
     position: relative;
 }
 
 .tasty li:hover .sub-menu,
-.sprite-menu li:hover .sub-menu-second,
-.sprite-menu li:hover .sub-menu-second-one,
-.sprite-menu li:hover .sub-menu-second-two {
+.sprite-menu li:hover .sub-menu,
+.market li:hover .sub-first,
+.sub-first li:hover .sub-second,
+.sub-second li:hover .sub-last  {
     max-width: 1000px;
     transition: all 1s ease;
     visibility: visible;
 }
 
 .hidden-menu ul > li + li,
-.hidden-menu-second ul > li + li {
+.hidden-menu-second ul > li + li,
+.sub-big-menu ul > li + li {
     border-top: 1px solid #b9bdc1;
 }
 
 .hidden-menu ul>li:first-child,
-.hidden-menu-second ul>li:first-child {
+.hidden-menu-second ul>li:first-child,
+.sub-big-menu ul > li:first-child {
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
 }
 
 .hidden-menu ul>li:last-child,
-.hidden-menu-second ul>li:last-child {
+.hidden-menu-second ul>li:last-child,
+.sub-big-menu ul > li:last-child {
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
 }
 
-.sub-menu,
-.sub-menu-second,
-.sub-menu-second-one {
+.sub-menu {
     width: 210px;
     height: 0;
-    padding-top: 15px;
+    padding-top: 5px;
     position: absolute;
-    top: 35px;
     left: -1px;
-    border-radius: 3px;
-    z-index: 1;
+    z-index: 2;
     visibility: hidden;
 }
 
@@ -125,24 +122,15 @@ a {
     left: -68%; 
 }
 
-.sub-menu li,
-.sub-menu-second li,
-.sub-menu-second-one li,
-.sub-menu-second-two li {
+.sub-menu li {
     background-color: #d2d4d5;
 }
 
-.sub-menu li:hover,
-.sub-menu-second li:hover,
-.sub-menu-second-one li:hover,
-.sub-menu-second-two li:hover {
+.sub-menu li:hover {
     background-color: #2a3644;
 }
 
-.sub-menu a,
-.sub-menu-second a,
-.sub-menu-second-one a
-.sub-menu-second-two a {
+.sub-menu a {
     display: block;
     padding: 15px 20px;
     font-size: 15px;
@@ -151,18 +139,33 @@ a {
     color: #2a3644;
 }
 
-.sub-menu-second-one {
+.sub-second {
+    left: 100%;
+    top: -5px;
+    z-index: 2;
+}
+
+.sub-last {
+    left: -100%;
+    top: -5px;
+}
+
+.hidden-menu-second .duble-sub-menu {
     width: 252%;
-    border: none;
+    background-color: #d2d4d5;
+}
+
+.sub-menu-second-one {
+    border-right: #b9bdc1;
 }
 
 .sub-menu-second-two {
     width: 210px;
     height: 0;
-    padding-top: 15px;
+    padding-top: 16px;
     position: absolute;
     top: 35px;
-    left: 125%;
+    left: 124%;
     border-radius: 3px;
     z-index: 1;
     visibility: hidden;
@@ -172,15 +175,11 @@ a {
     display: table;
 }
 
-ul.market li {
+.market > li {
     border-left: 1px solid #3f4852;
 }
 
-.market li:hover .first-menu-frig {
-    display: block;
-}
-
-ul.market li > a {
+.market > li > a {
     display: block;
     padding: 14px 43.2px;
     font-size: 16px;
@@ -338,7 +337,7 @@ td:nth-child(5) {
     text-align: end;
 }
 
-tbody tr:nth-child(odd) {
+tbody tr:nth-child(even) {
     background-color: #e8e8e8;
 }
 
