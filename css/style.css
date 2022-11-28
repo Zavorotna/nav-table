@@ -179,20 +179,6 @@ a {
 .top-menu > li {
     position: relative;
 }
-
-.sub-menu-second-one {
-    border-right: #b9bdc1;
-}
-
-.double-menu ul > li:first-child {
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-}
-
-.double-menu ul > li:last-child {
-    border-radius: 0 0 3px 3px;
-}
-
 .double-menu {
     background-color: #d2d4d5;
     width: 420px;
@@ -205,6 +191,18 @@ a {
     border-radius: 3px;
     z-index: 1;
     visibility: hidden;
+}
+
+.sub-menu-second-one {
+    border-right: #b9bdc1;
+}
+
+.sub-menu-second-one ul > li:first-child {
+    border-top-left-radius: 3px;
+}
+
+.sub-menu-second-one ul > li:last-child {
+    border-radius: 0 0 0 3px;
 }
 
 .sub-menu-second-one li {
@@ -233,6 +231,10 @@ a {
     left: 50%;
     z-index: 1;
     visibility: hidden;
+}
+
+.sub-menu-second-two ul > li:first-child {
+    border-radius: 0 3px 0 0;
 }
 
 .sub-menu-second-two li {
