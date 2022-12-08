@@ -52,15 +52,15 @@ a {
 
 .menu a,
 .menu-bottom > a {
-    display: block;
+    display: inline-block;
     padding: 14px 32px;
     font-size: 16px;
     font-weight: bold;
     color: #fff;
 }
 
-.menu li:hover {
-    background-color: #3f4852;
+.menu li:hover > .sub-menu {
+    display: block;
 }
 
 .menu li:hover > a {
@@ -75,17 +75,6 @@ a {
 .navigation-food li,
 .market li {
     position: relative;
-}
-
-.tasty li:hover .sub-menu,
-.sprite-menu li:hover .sub-menu,
-.sprite-menu li:hover .double-menu,
-.market li:hover .sub-first,
-.sub-first li:hover .sub-second,
-.sub-second li:hover .sub-last  {
-    max-width: 1000px;
-    transition: all 1s ease;
-    visibility: visible;
 }
 
 .border-menu ul > li + li {
@@ -103,28 +92,41 @@ a {
 }
 
 .sub-menu {
+    position: absolute;
+    display: none;
+    padding-top: 5px;
     width: 210px;
     height: 0;
-    padding-top: 5px;
-    position: absolute;
     z-index: 2;
-    visibility: hidden;
+}
+
+.sub-menu::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    background-color: transparent;
+}
+
+.sub-menu li,
+.sub-menu-second-one li {
+    background-color: #d2d4d5;
 }
 
 .milk {
     left: -68%; 
 }
 
-.sub-menu li {
-    background-color: #d2d4d5;
-}
-
-.sub-menu li:hover {
+.sub-menu li:hover,
+.sub-menu-second-one li:hover {
     background-color: #2a3644;
 }
 
-.sub-menu a {
-    display: block;
+.sub-menu a,
+.sub-menu-second-one a {
+    display: inline-block;
     padding: 15px 20px;
     font-size: 15px;
     line-height: 1em;
@@ -176,69 +178,60 @@ a {
     border-right: 1px solid #3f4852;
 }
 
-.top-menu > li {
+.top-menu {
     position: relative;
 }
-.double-menu {
-    background-color: #d2d4d5;
-    width: 420px;
-    height: 183px;
-    margin-top: 5px;
+
+.top-menu > li:hover > .sub-menu-second-one  {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 200px;
 }
 
-.double-menu {
+.sub-menu-second-one {
     position: absolute;
+    top: calc(100% + 5px);
+    display: none;
+    width: 420px;
+    background-color: #d2d4d5;
     border-radius: 3px;
-    z-index: 1;
-    visibility: hidden;
 }
 
-.sub-menu-second-one {
-    border-right: #b9bdc1;
-}
-
-.sub-menu-second-one ul > li:first-child {
-    border-top-left-radius: 3px;
-}
-
-.sub-menu-second-one ul > li:last-child {
-    border-radius: 0 0 0 3px;
-}
-
-.sub-menu-second-one li {
-    border-right: 1px solid #b9bdc1;
-}
-
-.sub-menu-second-one li + li{
-    border-top: 1px solid #b9bdc1;
-}
-
-.sub-menu-second-one {
-    width: 210px;
-    height: 0;
+.sub-menu-second-one::before {
+    content: "";
     position: absolute;
     top: -5px;
     left: 0;
-    z-index: 1;
-    visibility: hidden;
+    height: 5px;
+    width: 100%;
 }
 
-.sub-menu-second-two {
-    width: 210px;
-    height: 0;
-    position: absolute;
-    top: -5px;
-    left: 50%;
-    z-index: 1;
-    visibility: hidden;
+.sub-menu-second-one > li:nth-child(1), 
+.sub-menu-second-one > li:nth-child(2), 
+.sub-menu-second-one > li:nth-child(3), 
+.sub-menu-second-one > li:nth-child(4) {
+    border-right: 1px solid #b9bdc1;
 }
 
-.sub-menu-second-two ul > li:first-child {
+.sub-menu-second-one li {
+    border-bottom: 1px solid #b9bdc1;
+}
+
+.sub-menu-second-one > li:first-child {
+    border-radius: 3px 0 0 0;
+}
+
+.sub-menu-second-one > li:nth-child(4) {
+    border-radius: 0 0 0 3px;
+}
+
+.sub-menu-second-one > li:nth-child(5) {
     border-radius: 0 3px 0 0;
 }
 
-.sub-menu-second-two li {
-    border-bottom: 1px solid #b9bdc1;
+.sub-menu-second-one > li:nth-child(8) {
+    border-radius: 0 0 3px 0;
 }
 
 .sprite-menu > li > a {
